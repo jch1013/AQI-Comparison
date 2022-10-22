@@ -1,3 +1,15 @@
+let output = document.querySelector(".output-text");
+const solve = document.querySelector("#solve");
+solve.addEventListener('click', () => {
+	output.textContent = "hello there";
+})
+
+
+
+
+
+
+
 // functions from airnow site
 
 
@@ -78,3 +90,4 @@ if (document.form1.pollutant.selectedIndex == '1')
 	}  		
 }
 }
+
