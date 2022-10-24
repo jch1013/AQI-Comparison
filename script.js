@@ -5,18 +5,13 @@ solve.addEventListener('click', () => {
 })
 
 console.log("hello world!");
-console.log(ConcPM25(52));
-
-
-
+console.log(ConcPM25(1));
 
 
 
 
 // functions from airnow site
 
-
-//
 function ConcPM25(a) {
 	if (a>=0 && a<=50) {
 		ConcCalc=InvLinear(50,0,12,0,a);
@@ -33,40 +28,28 @@ function ConcPM25(a) {
 	} else if (a>400 && a<=500) {
 		ConcCalc=InvLinear(500,401,500.4,350.5,a);
 	} else {
-		ConcCalc="Error: Provided air quality out of range. Please enter a value between 0 and 500";
+		ConcCalc = "Error: Provided air quality out of range. Please enter a value between 0 and 500";
 	}
 	return ConcCalc;
 }
 
 
 function InvLinear(AQIhigh, AQIlow, Conchigh, Conclow, a) {
-	var AQIhigh;
-	var AQIlow;
-	var Conchigh;
-	var Conclow;
-	var a;
-	var c;
-	c=((a-AQIlow)/(AQIhigh-AQIlow))*(Conchigh-Conclow)+Conclow;
+	let c = ((a - AQIlow) / (AQIhigh - AQIlow)) * (Conchigh - Conclow) + Conclow;
 	return c;
 }
-
 
 function AQICalc(form1) {
 	var b;
 	var c;
 
-	document.form1.inputbox.style.textAlign = "center";
-	document.form1.inputbox.style.backgroundColor = "white";
+	if (document.form1.pollutant.selectedIndex == '1') {
 
-	if (document.form1.pollutant.selectedIndex == '1')
-	{
 		b = Math.round(document.form1.inputbox.value);
-		if (b < 0 || b>500)
-		{		
-			b = "PM25message";
-		}
-		else
-		{
+
+		if (b < 0 || b>500) {		
+			b = "Error: Provided air quality out of range. Please enter a value between 0 and 500";
+		} else {
 			c = Math.floor(10*ConcPM25(b))/10;
 		}  		
 	}
