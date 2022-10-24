@@ -7,7 +7,7 @@ While most people know that poor air quality negatively affects health, it can b
 Process:
 The general process of equating air pollution to number of cigarettes begins with calculating the concentration of pollutants in the air based off the provided PM2.5 AQI value. The functions used to convert to pollutant concentration are based on calculations carried out on the airnow.gov website. After a concentration value is calculated, the provided exposure time is used along with the concentration value to estimate an equivalent number of cigarettes. 
 
-According to Bloomberg, "one cigarette per day is the rough equivalent of a PM2.5 level of 22 μg/m3". In other words, 24 hours of exposure to air with a quality of 22 μg/m3 is equal to one cigarette. Using this relationship, the estimated number of cigarettes can be scaled according to the AQI and time provided. For example, 24 hours of exposure at 44 μg/m3 would return 2 cigarettes, and exposure at 44 μg/m3 for 12 hours would return one cigarette. 
+According to Bloomberg, <a href="https://www.bloomberg.com/news/articles/2018-04-25/the-app-that-translates-air-pollution-into-cigarettes">one cigarette per day is the rough equivalent of a PM2.5 level of 22 μg/m3 </a>. In other words, 24 hours of exposure to air with a quality of 22 μg/m3 is equal to one cigarette. Using this relationship, the estimated number of cigarettes can be scaled according to the AQI and time provided. For example, 24 hours of exposure at 44 μg/m3 would return 2 cigarettes, and exposure at 44 μg/m3 for 12 hours would return one cigarette. 
 
 Tech Used:
 The calculations are all written in JavaScript. 
