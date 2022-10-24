@@ -4,7 +4,7 @@ solve.addEventListener('click', () => {
 	output.textContent = "hello there";
 })
 
-console.log(ConcPM25(1));
+console.log(findConcentration(1));
 
 
 
