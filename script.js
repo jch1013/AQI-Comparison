@@ -1,10 +1,9 @@
-let output = document.querySelector(".output-text");
-const solve = document.querySelector("#solve");
-solve.addEventListener('click', () => {
-	output.textContent = "hello there";
-})
 
-console.log(findConcentration(1));
+const solve = document.querySelector("#solve");
+const form = document.querySelector("form");
+form.onsubmit = (evt) => evt.preventDefault();
+solve.addEventListener('click', showOutput);
+
 
 
 
@@ -35,12 +34,33 @@ function findConcentration(aqi) {
 	return concentration;
 }
 
+
+
 /* Calculate estimatedd PM2.5 concentration from a series of constant parameters and a provided air quality value. This 
 function returns the concentration in units of micrograms per meter squared.  */
 
 function InvLinear(AQIhigh, AQIlow, Conchigh, Conclow, aqi) {
 	let conc = ((aqi - AQIlow) / (AQIhigh - AQIlow)) * (Conchigh - Conclow) + Conclow;
 	return conc;
+}
+
+/* Calculates the equivalent number of cigarettes based on aqi and exposure time */
+function concentrationToCigarettes(conc, hours)  {
+	cigarettes = (hours / 24) * (conc / 22);
+	return Math.round(cigarettes * 10) / 10;
+}
+
+
+
+function showOutput() {
+	const aqi = document.getElementById("aqi").value;
+	const exposure = document.getElementById("exposure").value;
+	let output = document.querySelector(".output-text");
+	let concentration = findConcentration(aqi);
+	let cigarettes = concentrationToCigarettes(concentration, exposure);
+	output.textContent = cigarettes;
+	
+
 }
 
 
