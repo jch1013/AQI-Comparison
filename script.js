@@ -1,13 +1,4 @@
 
-const solve = document.querySelector("#solve");
-const form = document.querySelector("form");
-form.onsubmit = (evt) => evt.preventDefault();
-solve.addEventListener('click', showOutput);
-
-
-
-
-
 
 /* This function determines the value of the passed air quality and calls InvLinear with constant parameters and 
 the passed aqi value. Parameter values are sourced from airnow.gov */
@@ -35,7 +26,6 @@ function findConcentration(aqi) {
 }
 
 
-
 /* Calculate estimatedd PM2.5 concentration from a series of constant parameters and a provided air quality value. This 
 function returns the concentration in units of micrograms per meter squared.  */
 
@@ -51,7 +41,7 @@ function concentrationToCigarettes(conc, hours)  {
 }
 
 
-
+/* Calls previously defined functions to update front end */
 function showOutput() {
 	const aqi = document.getElementById("aqi").value;
 	const exposure = document.getElementById("exposure").value;
@@ -62,5 +52,11 @@ function showOutput() {
 	
 
 }
+
+/* Calling functions to run script */
+const solve = document.querySelector("#solve");
+const form = document.querySelector("form");
+form.onsubmit = (evt) => evt.preventDefault();
+solve.addEventListener('click', showOutput);
 
 
