@@ -80,7 +80,7 @@ form {
 }
 
 a {
-    color: lightblue;
+    color: var(--mustard);
 }
 
 .other {
