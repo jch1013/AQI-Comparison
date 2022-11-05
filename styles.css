@@ -1,5 +1,7 @@
 :root {
-    --darkgray: rgb(19, 19, 19)
+    --darkgray: rgb(19, 19, 19);
+    --lightergray: rgb(39, 39, 39);
+    --mustard: rgb(255, 225, 130);
 }
 
 
@@ -14,24 +16,82 @@ body {
 
 .content {
     padding: 40px;
-    background-color: rgb(39, 39, 39);
+    background-color: var(--lightergray);
     width: 30%;
     min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
 
+}
+
+h2 {
+    color: gray;
+    margin-bottom: 50px;
 }
 
 .input {
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
 .input-field {
-    background-color: ;
-    display: flex;
-    color: white;
+    background-color: var(--darkgray);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    color: gray;
+    width: 100%;
+
+
 }
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
+}
+
+#solve {
+    background-color: var(--mustard);
+    width: 40%;
+    padding: 5px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.output {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+
+.output-text {
+    font-size: 40px;
+    margin: 0px;
+}
+
+a {
+    color: lightblue;
+}
+
+.other {
+    color: gray;
+}
+
+
+
+/* Remove arrows from numeric input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
