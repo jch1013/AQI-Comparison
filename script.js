@@ -20,7 +20,7 @@ function findConcentration(aqi) {
 	} else if (aqi>400 && aqi<=500) {
 		concentration=InvLinear(500,401,500.4,350.5,aqi);
 	} else {
-		concentration = "Error: Provided air quality out of range. Please enter a value between 0 and 500";
+		concentration = -1;
 	}
 	return concentration;
 }
@@ -46,10 +46,21 @@ function showOutput() {
 	const aqi = document.getElementById("aqi").value;
 	const exposure = document.getElementById("exposure").value;
 	let output = document.querySelector(".output-text");
+	let caption = document.querySelector(".output-label");
 	let concentration = findConcentration(aqi);
-	let cigarettes = concentrationToCigarettes(concentration, exposure);
-	output.textContent = cigarettes;
-	
+	if (concentration == -1) {
+		output.textContent = "Error";
+		caption.textContent = "Please enter an AQI between 0 and 500";
+	} else if (exposure < 0) {
+		output.textContent = "Error";
+		caption.textContent = "Exposure time must be positive";
+	} else {
+		let cigarettes = concentrationToCigarettes(concentration, exposure);
+		output.textContent = cigarettes;
+		caption.textContent = "Cigarettes"
+	}
+
+
 
 }
 
