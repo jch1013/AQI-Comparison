@@ -1,9 +1,9 @@
 <h1><a href="https://jch1013.github.io/AQI-Comparison/">Air Quality Comparison</a></h1>
-** This project is a work in progress **
+
 
 <em>Purpose:</em>
 
-While most people know that poor air quality negatively affects health, it can be difficult to put the impact of poor air into perspective. The purpose of this project is to demonstrate to users the effects of poor air quality by equating AQI and exposure time to an estimated equivalent number of cigarettes smoked. This project was created in response to 
+While most people know that poor air quality negatively affects health, it can be difficult to put the impact of poor air into perspective. The purpose of this project is to demonstrate to users the effects of poor air quality by equating AQI and exposure time to an estimated equivalent number of cigarettes smoked. This project was created in response to weeks of poor air quality in Seattle, WA due to local wildfires.
 
 
 <em>Process:</em>
