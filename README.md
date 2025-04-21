@@ -15,4 +15,4 @@ According to Bloomberg, <a href="https://www.bloomberg.com/news/articles/2018-04
 
 <em>Tech Used:</em>
 
-The calculations are all written in JavaScript. The front end uses HTML and CSS.
+The logic is handled by JavaScript. The front end uses HTML and CSS. This simple site is deployed using GitHub Pages
